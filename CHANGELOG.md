@@ -1,5 +1,11 @@
 # @arsams/color-shades
 
+## 0.0.6
+
+### Patch Changes
+
+- baa99e0: public access for changesets
+
 ## 0.0.5
 
 ### Patch Changes
