@@ -16,8 +16,11 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
     "change": "changeset",
-    "release": "pnpm build && changeset publish"
+    "release": "pnpm build && changeset publish --access public"
   },
+  "repository": "git@github.com:arsamsarabi/color-shades.git",
+  "homepage": "https://github.com/arsamsarabi/color-shades#readme",
+  "bugs": "https://github.com/arsamsarabi/color-shades/issues",
   "author": {
     "name": "Arsam Sarabi",
     "email": "arsamsarabi@me.com",
