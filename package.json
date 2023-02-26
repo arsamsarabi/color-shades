@@ -1,0 +1,30 @@
+{
+  "name": "@arsams/color-shades",
+  "description": "A simple package to generate shades of a color",
+  "keywords": [
+    "color",
+    "shades",
+    "lighten",
+    "darken"
+  ],
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc",
+    "change": "changeset"
+  },
+  "author": {
+    "name": "Arsam Sarabi",
+    "email": "arsamsarabi@me.com",
+    "url": "https://arsam.dev"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5"
+  }
+}
