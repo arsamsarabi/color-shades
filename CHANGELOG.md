@@ -1,5 +1,11 @@
 # @arsams/color-shades
 
+## 0.0.5
+
+### Patch Changes
+
+- e0a34ac: adds access public to release command
+
 ## 0.0.4
 
 ### Patch Changes
