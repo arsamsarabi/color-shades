@@ -1,5 +1,11 @@
 # @arsams/color-shades
 
+## 0.0.4
+
+### Patch Changes
+
+- 4639b38: adds publish command
+
 ## 0.0.3
 
 ### Patch Changes
