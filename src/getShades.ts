@@ -1,80 +1,39 @@
-import Color from "color";
 import { ColorBrands } from "./types";
-import { getColorBrand } from "./utils";
+import { format } from "./utils";
+import { lighten, darken, both } from "./shaders";
 
 export type GetShadesArgs = {
+  percentage?: number;
   color: string;
-  count: number;
-  amount: number;
-  mode: "lighten" | "darken" | "both";
-  output: ColorBrands;
+  count?: number;
+  mode?: "lighten" | "darken" | "both";
+  output?: ColorBrands;
 };
 
 export type GetShades = (args: GetShadesArgs) => string[];
 
-const outputFuncs = {
-  hex: (color: Color) => color.hex(),
-  hexa: (color: Color) => color.hex(),
-  rgb: (color: Color) => color.rgb().string(),
-  rgba: (color: Color) => color.rgb().string(),
-  hsl: (color: Color) => color.hsl().string(),
-  hsla: (color: Color) => color.hsl().string(),
-};
-
-const lighten = (color: Color, amount: number, index: number) =>
-  color.lighten(amount * index);
-const darken = (color: Color, amount: number, index: number) =>
-  color.darken(amount * index);
-
 export const getShades: GetShades = ({
   color,
-  count,
-  mode,
-  output,
-  amount,
+  count = 10,
+  mode = "both",
+  output = "hex",
+  percentage = 0.1,
 }) => {
-  const colorBrand = getColorBrand(color);
-  const inputColor = Color(color);
-  const primeIndex =
-    mode === "lighten" || "darken"
-      ? 0
-      : Math.floor(count / 2) > 0
-      ? Math.floor(count / 2)
-      : 0;
+  let result: Array<string> = [];
 
-  const result = [];
-
-  if (mode === "lighten") {
-    for (let i = 0; i < count; i++) {
-      if (i === primeIndex) {
-        result[i] = inputColor.hex();
-      } else {
-        result[i] = lighten(inputColor, amount, i).hex();
-      }
-    }
+  // Shade
+  switch (mode) {
+    case "lighten":
+      result = lighten({ color, count, percentage });
+    case "darken":
+      result = darken({ color, count, percentage });
+    default:
+      result = both({ color, count, percentage });
   }
 
-  if (mode === "darken") {
-    for (let i = 0; i < count; i++) {
-      if (i === primeIndex) {
-        result[i] = inputColor.hex();
-      } else {
-        result[i] = darken(inputColor, amount, i).hex();
-      }
-    }
-  }
+  // Format
+  result = result.map((color) => format[output](color));
 
-  if (mode === "both") {
-    for (let i = 0; i < count; i++) {
-      if (i === primeIndex) {
-        result[i] = inputColor.hex();
-      } else if (i < primeIndex) {
-        result[i] = lighten(inputColor, amount, i).hex();
-      } else {
-        result[i] = darken(inputColor, amount, i).hex();
-      }
-    }
-  }
-
-  return result.map((color) => outputFuncs[output](Color(color)));
+  // Deliver
+  return result;
 };

@@ -1,21 +1,53 @@
-import { getShades } from "../src";
+import { getShades } from "../src/getShades";
+import { lighten, darken, both } from "../src/shaders";
+
+jest.mock("../src/shaders", () => {
+  return {
+    lighten: jest.fn().mockImplementation(() => []),
+    darken: jest.fn().mockImplementation(() => []),
+    both: jest.fn().mockImplementation(() => []),
+  };
+});
+
+jest.mock("../src/utils/formatter");
 
 describe("getShades()", () => {
-  it("Should return an array of 10 shades of the given color", () => {
-    const shades = getShades({
-      color: "#ff0000",
-      count: 3,
+  it("Should call lighten correctly", () => {
+    getShades({
+      color: "#B83F87",
       mode: "lighten",
-      output: "hex",
-      amount: 0.1,
     });
 
-    expect(shades.map((shade) => shade.toLowerCase())).toEqual([
-      "#ff0000",
-      "#ff1a1a",
-      "#ff3333",
-    ]);
+    expect(lighten).toHaveBeenCalledWith({
+      color: "#B83F87",
+      count: 10,
+      percentage: 0.1,
+    });
   });
 
-  it.skip("should return an array of 10 shades of the given color", () => {});
+  it("Should call darken correctly", () => {
+    getShades({
+      color: "#B83F87",
+      mode: "darken",
+    });
+
+    expect(darken).toHaveBeenCalledWith({
+      color: "#B83F87",
+      count: 10,
+      percentage: 0.1,
+    });
+  });
+
+  it("Should call both correctly", () => {
+    getShades({
+      color: "#B83F87",
+      mode: "both",
+    });
+
+    expect(both).toHaveBeenCalledWith({
+      color: "#B83F87",
+      count: 10,
+      percentage: 0.1,
+    });
+  });
 });
