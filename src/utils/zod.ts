@@ -25,7 +25,7 @@ const colorSchema = z.string().refine(
   { message: "Invalid color value." }
 );
 
-const COLOR_MODES = ["hex", "hexa", "rgb", "rgba", "hsl", "hsla"] as const;
+const COLOR_MODES = ["hex", "rgb", "hsl"] as const;
 
 const DEFAULT_AMOUNT = 0.1;
 const DEFAULT_COUNT = 10;

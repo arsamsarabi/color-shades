@@ -16,7 +16,7 @@ const shades = getShades({
   color: "#bada55", // base color
   count: 10, // number of shades (default: 10)
   mode: "both", // color mode (default: 'both') (lighten | darken | both)
-  output: "hex", // output format (default: 'hex') (hex | hexa | rgb | rgba | hsl | hsla)
+  output: "hex", // output format (default: 'hex') (hex | rgb | hsl)
 });
 
 console.log(shades);
