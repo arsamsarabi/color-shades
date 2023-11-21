@@ -1,9 +1,9 @@
 import { type InputType, format, validate } from "./utils";
 import { lighten, darken, both } from "./shaders";
 
-export const getShades = (
-  input: Partial<InputType> & { color: string }
-): Array<string> => {
+export type GetShadesInput = Partial<InputType> & { color: string };
+
+export const getShades = (input: GetShadesInput): Array<string> => {
   const { color, count, mode, output, amount } = validate(input);
   let result: Array<string> = [];
 

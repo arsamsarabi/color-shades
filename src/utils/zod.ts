@@ -27,13 +27,13 @@ const colorSchema = z.string().refine(
 
 const COLOR_MODES = ["hex", "hexa", "rgb", "rgba", "hsl", "hsla"] as const;
 
-const DEFAULT_AMOUT = 0.1;
+const DEFAULT_AMOUNT = 0.1;
 const DEFAULT_COUNT = 10;
 const DEFAULT_MODE = "both";
 const DEFAULT_OUTPUT = "hex";
 
 const inputSchema = z.object({
-  amount: z.number().min(0).max(1).optional().default(DEFAULT_AMOUT),
+  amount: z.number().min(0).max(1).optional().default(DEFAULT_AMOUNT),
   color: colorSchema,
   count: z.number().min(1).optional().default(DEFAULT_COUNT),
   mode: z.enum(["lighten", "darken", "both"]).optional().default(DEFAULT_MODE),
