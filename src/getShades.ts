@@ -1,34 +1,20 @@
-import { ColorBrands } from "./types";
-import { format } from "./utils";
+import { type InputType, format, validate } from "./utils";
 import { lighten, darken, both } from "./shaders";
 
-export type GetShadesArgs = {
-  percentage?: number;
-  color: string;
-  count?: number;
-  mode?: "lighten" | "darken" | "both";
-  output?: ColorBrands;
-};
-
-export type GetShades = (args: GetShadesArgs) => string[];
-
-export const getShades: GetShades = ({
-  color,
-  count = 10,
-  mode = "both",
-  output = "hex",
-  percentage = 0.1,
-}) => {
+export const getShades = (
+  input: Partial<InputType> & { color: string }
+): Array<string> => {
+  const { color, count, mode, output, amount } = validate(input);
   let result: Array<string> = [];
 
   // Shade
   switch (mode) {
     case "lighten":
-      result = lighten({ color, count, percentage });
+      result = lighten({ color, count, amount });
     case "darken":
-      result = darken({ color, count, percentage });
+      result = darken({ color, count, amount });
     default:
-      result = both({ color, count, percentage });
+      result = both({ color, count, amount });
   }
 
   // Format

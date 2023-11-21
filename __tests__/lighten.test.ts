@@ -5,7 +5,7 @@ describe("lighten()", () => {
     const shades = lighten({
       color: "#ff0000",
       count: 3,
-      percentage: 0.1,
+      amount: 0.1,
     });
 
     expect(shades.map((shade) => shade.toLowerCase())).toEqual([
@@ -34,10 +34,10 @@ describe("lighten()", () => {
     ]);
   });
 
-  it("Should lighten correctly with a specific percentage", () => {
+  it("Should lighten correctly with a specific amount", () => {
     const shades = lighten({
       color: "#aef833",
-      percentage: 0.2,
+      amount: 0.2,
       count: 5,
     });
 
