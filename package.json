@@ -7,7 +7,7 @@
     "lighten",
     "darken"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -22,7 +22,7 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
     "change": "changeset",
-    "release": "pnpm build && changeset publish",
+    "release": "pnpm build && changeset publish --public",
     "test": "jest"
   },
   "repository": "git@github.com:arsamsarabi/color-shades.git",

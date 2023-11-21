@@ -1,0 +1,33 @@
+# Project
+
+[] Turbo repo
+  - Demo website
+  - Documentation website
+
+------------------------------------------------------------
+# CI / CD
+
+[] Github actions
+  - Test
+  - Build
+  - release
+[] Chagesets
+
+------------------------------------------------------------
+# Code quality
+
+[] Prettier
+[] Eslint
+[] Husky
+[] Commitlint
+[] lint-staged
+
+------------------------------------------------------------
+# Github
+
+[] Issue templates
+[] Pull request templates
+[] Contributing guidelines
+[] Code of conduct
+[] Security policy
+[] Dependabot
