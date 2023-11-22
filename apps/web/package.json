@@ -1,0 +1,44 @@
+{
+  "name": "@arsams/color-shades-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "next lint && npm run stylelint",
+    "stylelint": "stylelint '**/*.css' --cache",
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "generate:component": "turbo gen react-component"
+  },
+  "dependencies": {
+    "@arsams/color-shades": "workspace:*",
+    "@mantine/core": "7.2.2",
+    "@mantine/form": "^7.2.2",
+    "@mantine/hooks": "7.2.2",
+    "@tabler/icons-react": "^2.40.0",
+    "clsx": "^2.0.0",
+    "dayjs": "^1.11.10",
+    "framer-motion": "^10.16.4",
+    "next": "14.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@arsams/eslint-config": "workspace:*",
+    "@arsams/prettier-config": "workspace:*",
+    "@arsams/typescript-config": "workspace:*",
+    "@total-typescript/ts-reset": "^0.5.1",
+    "@turbo/gen": "^1.10.12",
+    "@types/node": "^20.8.10",
+    "@types/react": "18.2.34",
+    "postcss": "^8.4.31",
+    "postcss-preset-mantine": "1.11.0",
+    "postcss-simple-vars": "^7.0.1",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "sass": "^1.69.5",
+    "typescript": "5.2.2"
+  }
+}

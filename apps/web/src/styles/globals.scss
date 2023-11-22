@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+}
+
+body {
+  font-size: 16px;
+}
+
+::selection {
+  background-color: var(--mantine-color-avocado-5);
+  color: var(--mantine-color-white);
+}
+
+::-webkit-scrollbar-track {
+  position: absolute;
+  border: none;
+  background-color: var(--mantine-color-avocado-1);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--mantine-color-avocado-4);
+  border-radius: 2px;
+}

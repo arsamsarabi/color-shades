@@ -1,14 +1,18 @@
 {
-  "name": "color-shades-monorepo",
-  "version": "0.0.0",
+  "name": "arsam-color",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
-  "engines": {
-    "node": ">=20.7.0",
-    "pnpm": "8.10.2"
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
-  "packageManager": "pnpm@8.10.2"
+  "devDependencies": {
+    "@arsams/eslint-config": "workspace:*",
+    "@arsams/prettier-config": "workspace:*",
+    "@arsams/typescript-config": "workspace:*",
+    "prettier": "^3.1.0",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.0"
 }

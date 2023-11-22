@@ -1,0 +1,3 @@
+{
+  "extends": "@arsams/typescript-config/base.json"
+}
