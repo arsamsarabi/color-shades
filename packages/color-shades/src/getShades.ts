@@ -5,21 +5,14 @@ export type GetShadesInput = Partial<InputType> & { color: string };
 
 export const getShades = (input: GetShadesInput): Array<string> => {
   const { color, count, mode, output, amount } = validate(input);
-  let result: Array<string> = [];
 
   // Shade
   switch (mode) {
     case "lighten":
-      result = lighten({ color, count, amount });
+      return lighten({ color, count, amount }).map((color) => format[output](color));
     case "darken":
-      result = darken({ color, count, amount });
+      return darken({ color, count, amount }).map((color) => format[output](color));
     default:
-      result = both({ color, count, amount });
+      return both({ color, count, amount }).map((color) => format[output](color));
   }
-
-  // Format
-  result = result.map((color) => format[output](color));
-
-  // Deliver
-  return result;
 };

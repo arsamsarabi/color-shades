@@ -2,7 +2,8 @@ import '@mantine/core/styles.css';
 import '../styles/globals.scss';
 import { ColorSchemeScript } from '@mantine/core';
 import type { Metadata } from 'next';
-import { Providers } from '../components/providers';
+import { Providers } from '@/components/providers';
+import { Layout } from '@/components/layout';
 
 export const metadata: Metadata = {
   title: '@arsams/color-shades',
@@ -21,7 +22,11 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Layout>
+            {children}
+          </Layout>
+        </Providers>
       </body>
     </html>
   );

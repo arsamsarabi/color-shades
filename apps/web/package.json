@@ -10,7 +10,7 @@
     "lint": "next lint && npm run stylelint",
     "stylelint": "stylelint '**/*.css' --cache",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "generate:component": "turbo gen react-component"
+    "gen": "turbo gen react-component"
   },
   "dependencies": {
     "@arsams/color-shades": "workspace:*",

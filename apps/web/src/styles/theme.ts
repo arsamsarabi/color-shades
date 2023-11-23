@@ -22,7 +22,7 @@ const themeOverrides: MantineThemeOverride = {
     dark: 7,
   },
 
-  primaryColor: 'avocado',
+  primaryColor: 'blue',
   /** Function to resolve colors based on variant.
    *  Can be used to deeply customize how colors are applied to `Button`, `ActionIcon`, `ThemeIcon`
    *  and other components that use colors from theme.

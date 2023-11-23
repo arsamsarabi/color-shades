@@ -1,15 +1,6 @@
 import type { CSSVariablesResolver } from '@mantine/core';
 
-export const cssVariablesResolver: CSSVariablesResolver = ({
-  colors,
-  spacing,
-}) => {
-  const { avocado, chalk, rock, grey } = colors;
-
-  if (!avocado || !chalk || !rock || !grey) {
-    throw new Error('Invalid theme colors');
-  }
-
+export const cssVariablesResolver: CSSVariablesResolver = () => {
   return {
     variables: {
       // Header

@@ -1,0 +1,15 @@
+.radio__wrapper {
+  cursor: pointer;
+}
+
+.radio__label {
+  position: relative;
+  &:has(:checked) {
+    background-color: #e0e0e0;
+  }
+}
+
+.radio__input {
+  position: absolute;
+  opacity: 0;
+}
