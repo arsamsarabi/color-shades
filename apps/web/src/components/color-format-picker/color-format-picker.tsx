@@ -1,14 +1,19 @@
 "use client";
 
 import { FormatButton } from "@/components/format-button";
-import cn from "./styles.module.css"
 import { useShadesContext } from "@/context/shades-context";
+import { Flex } from "@mantine/core";
+import cn from "./styles.module.css";
 
 export const ColorFormatPicker = () => {
   const { output, setOutput } = useShadesContext();
 
   return (
-    <div className={cn.wrapper}>
+    <Flex
+      classNames={{
+        root: cn.format__wrapper,
+      }}
+    >
       <FormatButton
         id="hex"
         value="hex"
@@ -33,6 +38,6 @@ export const ColorFormatPicker = () => {
       >
         HSL
       </FormatButton>
-    </div>
+    </Flex>
   );
 };

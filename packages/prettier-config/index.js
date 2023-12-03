@@ -1,4 +1,4 @@
-export const config = {
+const config = {
   trailingComma: "es5",
   tabWidth: 2,
   semi: true,
@@ -6,6 +6,7 @@ export const config = {
   // A collection of Regular expressions in string format.
   importOrder: [
     "@mantine/core/styles.layer.css",
+    '@mantine/notifications/styles.layer.css',
     "@/styles/globals.scss",
     "<THIRD_PARTY_MODULES>",
     "^[@/]",
@@ -20,3 +21,5 @@ export const config = {
   importOrderSortSpecifiers: true,
   plugins: ["@trivago/prettier-plugin-sort-imports"],
 };
+
+module.exports = config;

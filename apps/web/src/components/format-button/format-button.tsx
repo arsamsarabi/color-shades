@@ -7,7 +7,7 @@ type FormatButtonProps = {
   value: ShadesOutput;
   checked: boolean;
   onChange: (value: ShadesOutput) => void;
-}
+};
 
 export const FormatButton = ({
   id,

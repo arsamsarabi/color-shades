@@ -1,13 +1,14 @@
-import '@mantine/core/styles.css';
-import '../styles/globals.scss';
-import { ColorSchemeScript } from '@mantine/core';
-import type { Metadata } from 'next';
-import { Providers } from '@/components/providers';
-import { Layout } from '@/components/layout';
+import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.layer.css";
+import "../styles/globals.scss";
+import { ColorSchemeScript } from "@mantine/core";
+import type { Metadata } from "next";
+import { Providers } from "@/components/providers";
+import { Layout } from "@/components/layout";
 
 export const metadata: Metadata = {
-  title: '@arsams/color-shades',
-  description: 'Color shades generator',
+  title: "@arsams/color-shades",
+  description: "Color shades generator",
 };
 
 export default function RootLayout({ children }: { children: any }) {
@@ -23,9 +24,7 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <Providers>
-          <Layout>
-            {children}
-          </Layout>
+          <Layout>{children}</Layout>
         </Providers>
       </body>
     </html>

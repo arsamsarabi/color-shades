@@ -12,9 +12,7 @@ export const Layout = ({ children }: PropsWithChildren<unknown>) => {
       }}
     >
       <Toolbar />
-      <main className={cn.main}>
-        {children}
-      </main>
+      <main className={cn.main}>{children}</main>
     </Flex>
   );
 };

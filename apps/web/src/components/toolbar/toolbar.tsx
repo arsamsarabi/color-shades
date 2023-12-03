@@ -1,6 +1,6 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 import { GetShadesForm } from "@/components/get-shades-form";
-import cn from "./styles.module.css"
+import cn from "./styles.module.css";
 
 export const Toolbar = () => {
   return (
