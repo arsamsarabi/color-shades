@@ -1,1 +1,1 @@
-export * from "./format-button";
+export * from './format-button'

@@ -1,1 +1,1 @@
-export * from "./color-format-picker";
+export * from './color-format-picker'

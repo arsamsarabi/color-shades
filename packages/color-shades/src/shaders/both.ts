@@ -1,23 +1,20 @@
 import Color from "color";
 import type { ShaderArgs } from "./types";
+import { lighten } from "./lighten";
+import { darken } from "./darken";
 
 export type BothArgs = ShaderArgs;
 export type Both = (args: BothArgs) => string[];
 
 export const both: Both = ({ color, count = 10, amount = 0.1 }) => {
-  const result: Array<string> = [];
-  const baseColorIndex = Math.floor((count - 1) / 2);
-  const firstColor = Color(color).lighten(amount * baseColorIndex);
-  result.push(firstColor.hex());
+  const isEven = count % 2 === 0;
+  const half = Math.floor(count / 2);
+  const extra = isEven ? 1 : 0;
 
-  for (let i = 1; i < count; i++) {
-    if (i === baseColorIndex) {
-      result.push(color);
-    } else {
-      const c = Color(result[i - 1]);
-      result.push(c.darken(amount).hex());
-    }
-  }
+  const lightened = lighten({ color, count: half, amount }).reverse();
+  const darkened = darken({ color, count: half + extra, amount: amount }).slice(1, count + 1);
+
+  const result = [...lightened, ...darkened].map((color) => Color(color).hex());
 
   return result;
 };

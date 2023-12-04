@@ -1,36 +1,38 @@
-"use client";
+'use client'
 
-import { ColorInput, Flex } from "@mantine/core";
-import { ColorFormatPicker } from "../color-format-picker";
-import { getColors } from "@/config/colors";
-import { useShadesContext } from "@/context/shades-context";
+import { getColors } from '@/config/colors'
+import { useShadesStore } from '@/stores/shades-store'
+import { ColorInput, Flex, Group } from '@mantine/core'
+import { ColorFormatPicker } from '../color-format-picker'
 
 export const GetShadesForm = () => {
-  const { color, setColor, output } = useShadesContext();
-  const swatch = getColors();
+  const { color, setColor, output } = useShadesStore()
+  const swatch = getColors()
 
   const handleChange = (value: string) => {
-    setColor(value);
-  };
+    setColor(value)
+  }
 
   return (
-    <Flex>
-      <ColorInput
-        closeOnColorSwatchClick={false}
-        defaultValue={color}
-        description=""
-        descriptionProps={{}}
-        disabled={false}
-        disallowInput={false}
-        fixOnBlur={true}
-        format={output}
-        onChangeEnd={handleChange}
-        radius={0}
-        required={true}
-        swatches={swatch}
-        value={color}
-      />
-      <ColorFormatPicker />
+    <Flex w="100%">
+      <Flex
+        gap={0}
+        justify="flex-start"
+        w="100%"
+      >
+        <ColorInput
+          fixOnBlur
+          format={output}
+          onChange={handleChange}
+          radius={0}
+          required
+          size='md'
+          swatches={swatch}
+          value={color}
+          withPreview={false}
+        />
+        <ColorFormatPicker />
+      </Flex>
     </Flex>
-  );
-};
+  )
+}

@@ -1,7 +1,7 @@
-import type { PropsWithChildren } from "react";
-import { Toolbar } from "@/components/toolbar";
-import cn from "./styles.module.css";
-import { Flex } from "@mantine/core";
+import type { PropsWithChildren } from 'react'
+import { Toolbar } from '@/components/toolbar'
+import { Flex } from '@mantine/core'
+import cn from './styles.module.css'
 
 export const Layout = ({ children }: PropsWithChildren<unknown>) => {
   return (
@@ -14,5 +14,5 @@ export const Layout = ({ children }: PropsWithChildren<unknown>) => {
       <Toolbar />
       <main className={cn.main}>{children}</main>
     </Flex>
-  );
-};
+  )
+}

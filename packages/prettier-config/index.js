@@ -1,7 +1,7 @@
 const config = {
   trailingComma: "es5",
   tabWidth: 2,
-  semi: true,
+  semi: false,
   singleQuote: true,
   // A collection of Regular expressions in string format.
   importOrder: [

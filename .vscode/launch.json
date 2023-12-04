@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Web app | Debug mode",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "turbo run dev",
+      "cwd": "${workspaceFolder}/apps/web"
+    },
+    {
+      "name": "Color shades | Dev debug mode",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm ts-node-dev --respawn --transpile-only dev.ts",
+      "cwd": "${workspaceFolder}/packages/color-shades"
+    },
+  ]
+}

@@ -1,1 +1,1 @@
-export * from "./color-grid";
+export * from './color-grid'

@@ -1,6 +1,6 @@
-import { type MantineThemeOverride } from "@mantine/core";
-import { BLACK, WHITE, colors } from "./colors";
-import { body, heading } from "./fonts";
+import { type MantineThemeOverride } from '@mantine/core'
+import { BLACK, WHITE, colors } from './colors'
+import { body, heading } from './fonts'
 
 const themeOverrides: MantineThemeOverride = {
   white: WHITE,
@@ -8,11 +8,11 @@ const themeOverrides: MantineThemeOverride = {
   black: BLACK,
 
   breakpoints: {
-    xs: "25.875em",
-    sm: "48em",
-    md: "64em",
-    lg: "76.5em",
-    xl: "90em",
+    xs: '25.875em',
+    sm: '48em',
+    md: '64em',
+    lg: '76.5em',
+    xl: '90em',
   },
 
   colors: colors,
@@ -22,7 +22,7 @@ const themeOverrides: MantineThemeOverride = {
     dark: 7,
   },
 
-  primaryColor: "blue",
+  primaryColor: 'blue',
   /** Function to resolve colors based on variant.
    *  Can be used to deeply customize how colors are applied to `Button`, `ActionIcon`, `ThemeIcon`
    *  and other components that use colors from theme.
@@ -43,7 +43,7 @@ const themeOverrides: MantineThemeOverride = {
   // radius: MantineRadiusValues;
 
   /** Key of `theme.radius` or any valid CSS value. Default `border-radius` used by most components */
-  defaultRadius: "sm",
+  defaultRadius: 'sm',
 
   /** Object of values that are used to set various CSS properties that control spacing between elements */
   // spacing: MantineSpacingValues;
@@ -68,7 +68,7 @@ const themeOverrides: MantineThemeOverride = {
    * - `default` – cursor that is used by native HTML elements, for example, `input[type="checkbox"]` has `cursor: default` styles
    * - `pointer` – sets `cursor: pointer` on interactive elements that do not have these styles by default
    */
-  cursorType: "pointer",
+  cursorType: 'pointer',
 
   /** Default gradient configuration for components that support `variant="gradient"` */
   // defaultGradient: MantineGradient;
@@ -86,6 +86,6 @@ const themeOverrides: MantineThemeOverride = {
 
   /** Any other properties that you want to access with the theme objects */
   // other: MantineThemeOther;
-};
+}
 
-export const theme = themeOverrides;
+export const theme = themeOverrides

@@ -1,9 +1,3 @@
+import { ColorGrid } from '../color-grid'
 
-import { ColorGrid } from "../color-grid";
-
-
-export const HomeScreen = () => (
-  
-      <ColorGrid />
-
-);
+export const HomeScreen = () => <ColorGrid />

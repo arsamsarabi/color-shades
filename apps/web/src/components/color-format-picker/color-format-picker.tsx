@@ -1,23 +1,29 @@
-"use client";
+'use client'
 
-import { FormatButton } from "@/components/format-button";
-import { useShadesContext } from "@/context/shades-context";
-import { Flex } from "@mantine/core";
-import cn from "./styles.module.css";
+import { useShallow } from 'zustand/react/shallow'
+import { FormatButton } from '@/components/format-button'
+import { useShadesStore } from '@/stores/shades-store'
+import { Flex } from '@mantine/core'
+import cn from './styles.module.css'
 
 export const ColorFormatPicker = () => {
-  const { output, setOutput } = useShadesContext();
+  const { output, setOutput } = useShadesStore(
+    useShallow((state) => ({
+      output: state.output,
+      setOutput: state.setOutput,
+    }))
+  )
 
   return (
     <Flex
       classNames={{
-        root: cn.format__wrapper,
+        root: cn.wrapper,
       }}
     >
       <FormatButton
         id="hex"
         value="hex"
-        checked={output === "hex"}
+        checked={output === 'hex'}
         onChange={setOutput}
       >
         Hex
@@ -25,7 +31,7 @@ export const ColorFormatPicker = () => {
       <FormatButton
         id="rgb"
         value="rgb"
-        checked={output === "rgb"}
+        checked={output === 'rgb'}
         onChange={setOutput}
       >
         RGB
@@ -33,11 +39,11 @@ export const ColorFormatPicker = () => {
       <FormatButton
         id="hsl"
         value="hsl"
-        checked={output === "hsl"}
+        checked={output === 'hsl'}
         onChange={setOutput}
       >
         HSL
       </FormatButton>
     </Flex>
-  );
-};
+  )
+}
